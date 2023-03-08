@@ -1,11 +1,3 @@
-/*
-GAME RULES:
-- The game has 2 players, playing in rounds
-- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
-- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
-- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
-- The first player to reach 100 points on GLOBAL score wins the game
-*/
 
 "use strict";
 
@@ -58,25 +50,6 @@ const switchPlayer = () => {
   player1.classList.toggle("player--active");
 };
 
-//functions for game
-// const holdScore = () => {
-//   if (playerturn == 0) {
-//     score0El.textContent = currentScore;
-//     player1.classList.add("player--active");
-//     player0.classList.remove("player--active");
-//     currentScore = 0;
-//     currentScore0El.textContent = 0;
-//     playerturn = 1;
-//   } else {
-//     score1El.textContent = currentScore;
-//     player1.classList.remove("player--active");
-//     player0.classList.add("player--active");
-//     currentScore = 0;
-//     currentScore1El.textContent = 0;
-//     playerturn = 0;
-//   }
-// };
-
 const changeDiceImg = () => {
   if (playing) {
     // generate a random number
@@ -92,12 +65,6 @@ const changeDiceImg = () => {
       currentScore += randomDice;
       document.getElementById(`current--${playerturn}`).textContent =
         currentScore;
-
-      // if(playerturn==0){
-      //     currentScore0El.textContent = currentScore;
-      // } else {
-      //     currentScore1El.textContent = currentScore;
-      // }
     } else {
       switchPlayer();
     }
